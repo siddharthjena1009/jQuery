@@ -1,0 +1,134 @@
+<html>
+<head>
+  
+    <title>Sign-Up Form</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  
+    <script>
+        $(document).ready(function() {
+    
+            $('#signupForm').submit(function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                var isValid = true;
+                var errorMessage = '';
+
+               
+                if ($('#username').val() === '') {
+                    isValid = false;
+                    errorMessage += 'Username is required.<br>';
+                }
+                if ($('#email').val() === '') {
+                    isValid = false;
+                    errorMessage += 'Email is required.<br>';
+                }
+                if ($('#password').val() === '') {
+                    isValid = false;
+                    errorMessage += 'Password is required.<br>';
+                }
+                if ($('#confirmPassword').val() === '') {
+                    isValid = false;
+                    errorMessage += 'Confirm Password is required.<br>';
+                }
+
+                var email = $('#email').val();
+                var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (email && !emailRegex.test(email)) {
+                    isValid = false;
+                    errorMessage += 'Please enter a valid email address.<br>';
+                }
+
+
+                if ($('#password').val() !== $('#confirmPassword').val()) {
+                    isValid = false;
+                    errorMessage += 'Passwords do not match.<br>';
+                }
+            
+                if (!isValid) {
+                    $('#errorMessage').html(errorMessage);
+                } else {
+                    $('#errorMessage').html(''); // Clear error message if valid
+                    alert('Form submitted successfully!');
+               
+                }
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:hover, button:hover {
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Username" />
+            <input type="email" id="email" placeholder="Email" />
+            <input type="password" id="password" placeholder="Password" />
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+            <button type="submit">Submit</button>
+            <div class="error" id="errorMessage"></div>
+        </form>
+    </div>
+
+</body>
+</html>

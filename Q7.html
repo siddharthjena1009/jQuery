@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Student Data Table</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+$('#addRowButton').click(function() {
+var name = $('#studentName').val();
+var age = $('#studentAge').val();
+var grade = $('#studentGrade').val();
+var newRow = '<tr><td>' + name + '</td><td>' + age + '</td><td>' + grade + '</td></tr>';
+$('#studentTableBody').append(newRow);
+$('#studentName').val('');
+$('#studentAge').val('');
+$('#studentGrade').val('');
+});
+$('#changeColorButton').click(function() {
+$('td').css('color', 'red');
+});
+});
+</script>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+padding: 10px;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+table, th, td {
+border: 1px solid #ddd;
+}
+th, td {
+padding: 8px;
+text-align: center;
+}
+button {
+margin: 10px 0;
+padding: 10px;
+cursor: pointer;
+font-size: 16px;
+}
+input[type="text"] {
+padding: 8px;
+margin: 5px;
+font-size: 16px;
+}
+</style>
+</head>
+<body>
+<h1>Student Data Table</h1>
+<label for="studentName">Student Name:</label>
+<input type="text" id="studentName" placeholder="Enter name"><br>
+<label for="studentAge">Age:</label>
+<input type="text" id="studentAge" placeholder="Enter age"><br>
+<label for="studentGrade">Grade:</label>
+<input type="text" id="studentGrade" placeholder="Enter grade"><br>
+<button id="addRowButton">Add Row</button>
+<button id="changeColorButton">Change Color</button>
+<table>
+<thead>
+<tr>
+<th>Student Name</th>
+<th>Age</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody id="studentTableBody">
+</tbody>
+</table>
+</body>
+</html>

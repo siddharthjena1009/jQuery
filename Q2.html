@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>jQuery Div Actions</title>
+    <style>
+        #myDiv {
+            background-color: lightblue;
+            border: 2px solid black;
+            text-align: center;
+            padding: 50px;
+            width: 200px;
+            margin: 100px auto;
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myDiv').click(function() {
+                $(this).text('Clicked!');
+            });
+
+            $('#myDiv').dblclick(function() {
+                $(this).css('background-color', 'orange');
+            });
+
+            $('#myDiv').hover(
+                function() {
+                    $(this).css('border-color', 'green');
+                },
+                function() {
+                    $(this).css('border-color', 'black');
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+
+<div id="myDiv">Hover or Click Me!</div>
+
+</body>
+</html>

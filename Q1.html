@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Background Color and Div Toggle</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#red-btn').click(function() {
+                $('body').css('background-color', 'red');
+            });
+            $('#blue-btn').click(function() {
+                $('body').css('background-color', 'blue');
+            });
+            $('#green-btn').click(function() {
+                $('body').css('background-color', 'green');
+            });
+            $('#toggle-btn').click(function() {
+                $('div').toggle();
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .color-box {
+            margin: 20px auto;
+            padding: 20px;
+            width: 200px;
+            border: 1px solid #ccc;
+            display: none; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Change Background Color</h1>
+    <button id="red-btn">Red</button>
+    <button id="blue-btn">Blue</button>
+    <button id="green-btn">Green</button>
+    <button id="toggle-btn">Toggle Divs</button>
+
+    <div class="color-box" style="background-color: lightcoral;">This is a red box!</div>
+    <div class="color-box" style="background-color: lightblue;">This is a blue box!</div>
+    <div class="color-box" style="background-color: lightgreen;">This is a green box!</div>
+</body>
+</html>

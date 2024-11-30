@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>jQuery Animation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 0 auto;
+            transition: width 2s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let isAnimating = false;
+            let animation;
+
+            $('#startButton').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#myDiv').animate({ width: '400px' }, 2000);
+                }
+            });
+
+            $('#stopButton').click(function() {
+                if (isAnimating) {
+                    $('#myDiv').stop(); // Stop the animation immediately
+                    isAnimating = false;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h1>jQuery Animation Example</h1>
+<div id="myDiv"></div>
+<button id="startButton">Start</button>
+<button id="stopButton">Stop</button>
+
+</body>
+</html>

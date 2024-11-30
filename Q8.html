@@ -1,0 +1,79 @@
+<html>
+<head>
+     <title>Remove Element by ID</title>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#removeButton').click(function() {
+       
+                var idToRemove = $('#idInput').val();
+
+
+                if ($('#' + idToRemove).length) {
+             
+                    $('#' + idToRemove).remove();
+                } else {
+                    alert('No element found with ID: ' + idToRemove);
+                }
+                $('#idInput').val('');
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #content {
+            margin-top: 20px;
+        }
+
+        .paragraph {
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 14px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Remove Paragraph by ID</h1>
+    
+
+    <input type="text" id="idInput" placeholder="Enter ID of paragraph to remove">
+    <button id="removeButton">Remove Paragraph</button>
+
+
+    <div id="content">
+        <p id="para1" class="paragraph">This is paragraph 1</p>
+        <p id="para2" class="paragraph">This is paragraph 2</p>
+        <p id="para3" class="paragraph">This is paragraph 3</p>
+        <p id="para4" class="paragraph">This is paragraph 4</p>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>jQuery List Manipulation</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+$('#topics-list').append('<li>CSS</li>');
+$('#topics-list').prepend('<li>Introduction to Full Stack Development</li>');
+$('#topics-list').after('<p>Topics updated</p>');
+$('body').before('<h2>List of Topics Covered</h2>');
+});
+</script>
+</head>
+<body>
+<h1>Web Development Topics</h1>
+<ul id="topics-list">
+<li>Getting Started with Full Stack</li>
+<li>HTML</li>
+<li>CSS</li>
+</ul>
+</body>
+</html>

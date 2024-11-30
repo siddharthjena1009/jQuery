@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Fetch Text and HTML Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        #myDiv {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border: 1px solid #007BFF;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fetchTextButton').click(function() {
+                // Get the text content of the <p> element
+                let textContent = $('#myParagraph').text();
+                alert('Text Content: ' + textContent);
+            });
+
+            $('#fetchHtmlButton').click(function() {
+                let htmlContent = $('#myDiv').html();
+                alert('HTML Content: ' + htmlContent);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h1>Fetch Text and HTML Example</h1>
+<p id="myParagraph">This is a simple paragraph with some text.</p>
+<div id="myDiv">
+    <strong>This is a div element.</strong> It contains <em>HTML content</em>.
+</div>
+<button id="fetchTextButton">Fetch Text</button>
+<button id="fetchHtmlButton">Fetch HTML</button>
+
+</body>
+</html>
